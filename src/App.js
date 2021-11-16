@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Nav from "./components/nav";
+import ProductList from "./components/productlist";
+import MyBasket from "./components/basket";
 function App() {
+  let product = {
+    id: 1163,
+    productdisplayname: "Round Neck Jersey",
+    price: 895,
+    soldOut: 0,
+  };
+  let basket = ["bag", "t-shirt", "shoes"];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <ProductList product={product} />
+      <MyBasket basket={basket} />
     </div>
   );
 }
-
 export default App;
+// ReactDOM.render(<App />, document.getElementById("root"));
